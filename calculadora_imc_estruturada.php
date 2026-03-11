@@ -6,7 +6,7 @@
     <title>Calculadora de IMC</title>
 </head>
 <body>
-    <h1>Calculadora de IMC</h1>
+    <h1>Calculadora estruturada de IMC</h1>
     <form method="post">
         <label for="peso">Peso (kg):</label>
         <input type="number" name="peso" id="peso" step="0.1" required><br><br>
