@@ -1,0 +1,20 @@
+<?php
+class calculadora
+{
+    public $valor;
+
+    function __construct($valor) 
+    {
+        $this->valor = $valor;
+    }
+
+    function somar($operador1, $operador2)
+    {
+        return $operador1 + $operador2;
+    }
+}
+
+$calc = new calculadora(0);
+echo "VALOR = $calc->valor <br>";
+$calc->valor = $calc->somar(3,5);
+echo "VALOR = $calc->valor";
