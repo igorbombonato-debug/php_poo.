@@ -3,7 +3,7 @@
 class Conta
 {
     private $numero;
-    private $saldo;
+    protected $saldo;
 
 
     //Método Construtor
@@ -22,6 +22,11 @@ class Conta
     public function getSaldo()
     {
         return $this->saldo;
+    }
+
+    protected function setSaldo($novoSaldo)
+    {
+        $this->saldo - $novoSaldo;
     }
 
     //metodos
@@ -63,17 +68,21 @@ class Poupanca extends Conta
 
     function atualizarJuros()
     {
-        $this->saldo = $this->saldo * (1 + $this->juros);
+        $novoSaldo = $this->getSaldo() * (1 + $this->juros);
+        $this->saldo = $novoSaldo;
     }
+    // {
+    //     $this->saldo = $this->saldo * (1 + $this->juros);
+    // }
 }
 
 $conta= new Conta(1, 150);
 $conta->creditar(50);
 $conta->debitar(100);
-echo "Saldo da conta {$conta->getNumero()}: $conta->saldo<br>";
+echo "Saldo da conta {$conta->getNumero()}: {$conta->getsaldo()}<br>";
 
 $poupanca = new Poupanca(2, 150, 0.10);
 $poupanca->creditar(50);
 $poupanca->debitar(100);
 $poupanca->atualizarJuros();
-echo "Saldo da conta {$poupanca->getnumero()}: $poupanca->saldo<br>";
+echo "Saldo da conta {$poupanca->getnumero()}: {$poupanca->getsaldo()}<br>";
